@@ -32,6 +32,16 @@ function get_username(){
 	})
 }
 
+function show_histoty(j){    
+    let history = msg_list.map(a=>JSON.stringify(a))
+	.then(l=>{
+	    return `${l.name}: {l.msg}`
+	})
+	.join('\n')
+    document.getElementById('history').textContent = history
+    
+}
+
 function speak(){
     let token = api_get_global_token()
     let inputs = document.getElementById('inputs').value
