@@ -1,0 +1,25 @@
+<html>
+  <body>
+    <script>
+      function set_token(token) {
+      localStorage.setItem('token', token)
+      }
+      
+      function parse_search(search) {
+      if(search == ''){ return {} }
+      let ret = {}
+      search = search.substr(1)
+      search.split('&').map(item=>item.split('='))
+      .map(([k,v])=>{
+      ret[k]=v
+      })
+      return ret
+      }
+      
+      let search = parse_search(window.location.search)
+      console.log(search)
+      set_token(search.token)
+      window.location = location.protocol+'//'+location.host
+    </script>
+  </body>
+</html>
