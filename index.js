@@ -26,16 +26,17 @@ function get_username(){
 	    if(a.login){
 	    console.log('[debug] user:', a)
 		console.log('[debug] username:', a.login)
+		document.getElementById('my-name').textContent = a.login
 	    } else {
 		logout()
 	    }
 	})
 }
 
-function show_histoty(j){    
-    let history = msg_list.map(a=>JSON.stringify(a))
-	.then(l=>{
-	    return `${l.name}: {l.msg}`
+function show_history(j){
+    let history = j.slice().reverse()
+	.map(l=>{
+	    return `${l.name}: ${l.msg}`
 	})
 	.join('\n')
     document.getElementById('history').textContent = history
@@ -51,7 +52,7 @@ function speak(){
 	   , body: JSON.stringify({msg: inputs})
 	  }).then(b=>b.json())
 	.then(msg_list=>{
-	    let history = msg_list.map(a=>JSON.stringify(a)).join('\n')
-	    document.getElementById('history').textContent = history
+	    console.log(msg_list)
+	    show_history(msg_list)
 	})
 }
