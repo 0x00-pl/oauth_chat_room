@@ -24,11 +24,12 @@ function get_username(){
     fetch(config.api_server+'/api/user?token='+token).then(b=>b.json())
 	.then(a=>{
 	    if(a.login){
-	    console.log('[debug] user:', a)
+	        console.log('[debug] user:', a)
 		console.log('[debug] username:', a.login)
 		document.getElementById('my-name').textContent = a.login
 	    } else {
-		alert('can not get user name')
+		alert('can not get user name, a')
+		console.log(a)
 		logout()
 	    }
 	})
