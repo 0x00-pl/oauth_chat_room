@@ -28,6 +28,7 @@ function get_username(){
 		console.log('[debug] username:', a.login)
 		document.getElementById('my-name').textContent = a.login
 	    } else {
+		alert('can not get user name')
 		logout()
 	    }
 	})
