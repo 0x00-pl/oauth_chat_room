@@ -19,7 +19,7 @@
       let search = parse_search(window.location.search)
       console.log(search)
       set_token(search.token)
-      window.location = location.protocol+'//'+location.host
+      window.location = location.protocol+'//'+location.host+location.pathname.substr(0, location.pathname.lastIndexOf('/')+1)
     </script>
   </body>
 </html>
