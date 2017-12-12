@@ -1,7 +1,7 @@
 
 window.config = {
-    //api_server: 'http://nodejs-mongo-persistent-test-webapi.193b.starter-ca-central-1.openshiftapps.com'
-    api_server: 'http://localhost:8080'
+    api_server: 'http://nodejs-mongo-persistent-test-webapi.193b.starter-ca-central-1.openshiftapps.com'
+    //api_server: 'http://localhost:8080'
 }
 function login () {
     let cb = encodeURIComponent(location.protocol+'//'+location.host+'/login_cb.html')
@@ -40,7 +40,6 @@ function show_history(j){
 	})
 	.join('\n')
     document.getElementById('history').textContent = history
-    
 }
 
 function speak(){
