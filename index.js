@@ -4,7 +4,7 @@ window.config = {
     //api_server: 'http://localhost:8080'
 }
 function login () {
-    let cb = encodeURIComponent(location.protocol+'//'+location.host+location.pathname+'/login_cb.html')
+    let cb = encodeURIComponent(location.protocol+'//'+location.host+location.pathname+'login_cb.html')
     window.location = window.config.api_server+'/oauth0?cb='+cb
 }
 function logout() {
