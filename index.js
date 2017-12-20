@@ -1,7 +1,8 @@
 
 window.config = {
     //api_server: '//nodejs-mongo-persistent-test-webapi.193b.starter-ca-central-1.openshiftapps.com'
-    api_server: 'http://localhost:8080'
+    //api_server: 'http://localhost:8080'
+    api_server: 'https://www.0x00-pl.site'
 }
 function login () {
     let cb = encodeURIComponent(location.protocol+'//'+location.host+location.pathname+'login_cb.html')
